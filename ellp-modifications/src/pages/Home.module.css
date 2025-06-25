@@ -1,0 +1,89 @@
+.container {
+  font-family: Arial, sans-serif;
+  background: #026CB8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* tira justify-content: space-between para evitar "esticar" demais */
+  padding: 1rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7941d;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.menuButton {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  color: #002960;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 1;
+}
+
+.menuButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #f7941d;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.menuButton:hover::before {
+  left: 0;
+}
+
+.menuButton:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.brand {
+  color: #f7941d;
+  font-weight: bold;
+  font-size: clamp(80px, 25vw, 200px);
+  text-align: center;
+  width: 100%;
+  margin-top: 5rem; /* para ficar abaixo do menu fixo */
+  margin-bottom: 3rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #002960;
+  margin-bottom: 1.5rem;
+}
